@@ -2,13 +2,310 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 12px;
+}
+
+input[type="file"] {
+  font-size: 10px;
+  width: 80%;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  font-size: 12px;
+  margin: 10px;
+  color: #26265d;
+}
+
+.app {
+  display: flex;
+  padding-top: 50px;
+  min-height: 100vh;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d4e4ef+0,86aecc+100;Grey+Gloss */
+  background: #d4e4ef; /* Old browsers */
+  background: -moz-linear-gradient(top, #d4e4ef 0%, #86aecc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d4e4ef 0%, #86aecc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d4e4ef 0%, #86aecc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=0); /* IE6-9 */
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.list-card-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+
+.li-card {
+  background-color: white;
+  width: 200px;
+  list-style: none;
+  border: 1px solid #dedede;
+  -webkit-box-shadow: 11px 13px 17px -11px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 11px 13px 17px -11px rgba(0, 0, 0, 0.43);
+  box-shadow: 11px 13px 17px -11px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.li-picture {
+  height: 120px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.li-card p {
+  color: #464646;
+  margin: 0;
+  font-size: 12px;
+}
+
+.li-card b {
+  width: 57px;
+  display: inline-block;
+}
+
+.li-card div {
+  padding: 0 10px 10px 10px;
+}
+
+.li-card a {
+  border-top: 1px solid #dedede;
+  padding: 10px 0;
+  font-weight: bold;
+  color: #9c9b9b;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+  margin-top: 17px;
+  transition: .5s ease;
+}
+
+.li-card a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.form, .info-container {
+  position: relative;
+  background-color: white;
+  min-height: 240px;
+  -webkit-box-shadow: 3px 3px 14px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 3px 3px 14px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 14px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 700px;
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  width: 35%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form h2 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #262658;
+}
+
+.form .text-input {
+  width: 80%;
+  border-bottom: 2px solid #888db4;
+  padding: 5px;
+  margin: 5px;
+  transition: .5s ease;
+}
+
+.form .text-input:focus {
+  border-color: #262658;
+}
+
+.form .dark-blue-btn {
+  margin-top: 10px;
+}
+
+.dark-blue-btn [type=file] {
+  cursor: inherit;
+  display: block;
+  font-size: 999px;
+  filter: alpha(opacity=0);
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+}
+
+.dark-blue-btn {
+  background-color: #26265d;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 3px;
+  transition: .5s ease;
+  border: none;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.dark-blue-btn.disabled {
+  opacity: 0.7;
+}
+
+.dark-blue-btn.disabled:hover {
+  cursor: auto;
+  background-color: #26265d;
+}
+
+.dark-blue-btn:hover {
+  cursor: pointer;
+  background-color: #3b3b97;
+}
+
+.info-container .header-image {
+  border-radius: 10px 10px 0 0;
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+.small-grey-text {
+  border-top: 1px solid #b7b1b1;
+  color: #757373;
+  padding-top: 5px;
+  font-size: 13px;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.info-container .title {
+  margin: 0;
+}
+
+.info-container .content {
+  padding: 20px;
+}
+
+.loading-screen {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
 }
